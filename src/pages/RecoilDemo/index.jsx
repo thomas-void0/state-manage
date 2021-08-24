@@ -9,7 +9,7 @@ const countState = atom({
 })
 
 const Parent = ()=>{
-    console.log("parent")
+    console.log("recoil parent")
     const [count,setCount] = useRecoilState(countState)
     
     const handleClick = () => {
