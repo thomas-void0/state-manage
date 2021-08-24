@@ -34,7 +34,8 @@ const Parent = ()=>{
     }
 
     return (
-        <Provider value={{count}}>
+        <Provider value={{ count }}>
+            <h1 style={{borderTop:"1px solid"}}>context demo</h1>
             <button onClick={handleClick}>数字+</button>
             <Child1/>
             <Child2 />
