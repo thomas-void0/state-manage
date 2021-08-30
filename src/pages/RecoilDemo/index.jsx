@@ -1,16 +1,22 @@
 import React from 'react'
-import { atom, useRecoilState } from "recoil"
+import { atom, useRecoilState,useRecoilValueLoadable,selector } from "recoil"
 import Child2 from './child2'
 import Child1 from './child1'
 
 const countState = atom({
     key: "countState",
-    default:0
+    default: selector({
+        key: 'CurrentUserID/Default',
+        get: () => setTimeout(()=>0,1000),
+    }),
 })
 
 const Parent = ()=>{
     console.log("recoil parent")
-    const [count,setCount] = useRecoilState(countState)
+    const [count, setCount] = useRecoilState(countState)
+    const loadable = useRecoilValueLoadable(countState)
+
+    console.log(loadable)
     
     const handleClick = () => {
         setCount(count + 1)
