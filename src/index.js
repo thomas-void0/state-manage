@@ -4,6 +4,7 @@ import ContextDemo from "./pages/ContextDemo"
 import RecoilDemo from "./pages/RecoilDemo"
 import { RecoilRoot } from "recoil"
 import TodoListDemo from "./pages/TodoListDemo"
+import ContextStateDemo from "./pages/ContextStateDemo"
 
 // recoil 
 // ReactDOM.render(
@@ -18,9 +19,15 @@ import TodoListDemo from "./pages/TodoListDemo"
 
 
 // todolist
-ReactDOM.render(
-  <RecoilRoot>
-    <TodoListDemo />
-  </RecoilRoot>,
+// ReactDOM.render(
+//   <RecoilRoot>
+//     <TodoListDemo />
+//   </RecoilRoot>,
+//   document.getElementById('root3')
+// )
+
+// state-context
+ReactDOM.render(<ContextStateDemo />
+  ,
   document.getElementById('root3')
 )
