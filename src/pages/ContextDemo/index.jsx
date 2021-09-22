@@ -32,36 +32,31 @@ const Parent = ()=>{
     console.log("parent")
 
     const [{count}, dispath] = React.useReducer(reducer, { count: 0 })
-    
-    const handleClick = () => {
-        dispath(count + 1)
-    }
 
     return (
-        <Provider value={{ count }}>
-            <h1 style={{borderTop:"1px solid"}}>context demo</h1>
-            <button onClick={handleClick}>数字+</button>
+        <Provider value={{ count,dispath }}>
             <Child1/>
             <Child2 />
         </Provider>
     )
 }
 
+// props children demo
 
-const PContainer = ({children}) => {
-    const [{count}, dispath] = React.useReducer(reducer, { count: 0 })
+// const PContainer = ({children}) => {
+//     const [{count}, dispath] = React.useReducer(reducer, { count: 0 })
 
-   return <Provider value={{ count,dispath }}>{children}</Provider>
-}
+//    return <Provider value={{ count,dispath }}>{children}</Provider>
+// }
 
 
-const Child3 = () => {
-    return (
-        <PContainer>
-            <Child1 />
-            <Child2 />
-        </PContainer>        
-    )
-}
+// const Child3 = () => {
+//     return (
+//         <PContainer>
+//             <Child1 />
+//             <Child2 />
+//         </PContainer>        
+//     )
+// }
 
-export default Child3
+export default Parent
