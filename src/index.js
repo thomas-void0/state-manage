@@ -15,7 +15,7 @@ import ContextStateDemo from "./pages/ContextStateDemo"
 // );
 
 // // context 
-// ReactDOM.render(<ContextDemo />,document.getElementById('root2'));
+ReactDOM.render(<ContextDemo />,document.getElementById('root2'));
 
 
 // todolist
@@ -27,7 +27,7 @@ import ContextStateDemo from "./pages/ContextStateDemo"
 // )
 
 // state-context
-ReactDOM.render(<ContextStateDemo />
-  ,
-  document.getElementById('root3')
-)
+// ReactDOM.render(<ContextStateDemo />
+//   ,
+//   document.getElementById('root3')
+// )

@@ -10,9 +10,13 @@ const reducer = (_,data) => {
 function Child1() {
     console.log("child1 执行")
     const store = React.useContext(context)
-    const { count } = store
+    const { count,dispath } = store
+
+    const handleClick = () => {
+        dispath(count + 1)
+    }
     return (
-        <h1>child1:{count}</h1>
+        <h1 onClick={handleClick}>child1:{count}</h1>
     )
 }
 
@@ -41,7 +45,23 @@ const Parent = ()=>{
             <Child2 />
         </Provider>
     )
-
 }
 
-export default Parent
+
+const PContainer = ({children}) => {
+    const [{count}, dispath] = React.useReducer(reducer, { count: 0 })
+
+   return <Provider value={{ count,dispath }}>{children}</Provider>
+}
+
+
+const Child3 = () => {
+    return (
+        <PContainer>
+            <Child1 />
+            <Child2 />
+        </PContainer>        
+    )
+}
+
+export default Child3
