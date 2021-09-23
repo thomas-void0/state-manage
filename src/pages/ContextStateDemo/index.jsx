@@ -3,11 +3,14 @@ import { createContainer,usePersistFn } from "context-state"
 
 function useCounter(){
     const [count, setCount] = React.useState(0)
+    const [status, setStatus] = React.useState("init")
     const increment = usePersistFn(() => setCount(c => c + 1));
 
     return {
+        status,
         count,
-        increment
+        increment,
+        setStatus
     }
 }
 
@@ -29,8 +32,10 @@ const CounterDisplay = () => {
 }
 
 const Child = () => {
+    const { status,setStatus } = CounterContainer.usePicker(['status','setStatus'])
+    
     console.log("gooooo")
-    return <div>child</div>
+    return <div onClick={() => setStatus(Math.random())}>child:{status}</div>
 }
 
 
