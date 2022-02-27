@@ -1,33 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ContextDemo from "./pages/ContextDemo"
-import RecoilDemo from "./pages/RecoilDemo"
 import { RecoilRoot } from "recoil"
-import TodoListDemo from "./pages/TodoListDemo"
-import ContextStateDemo from "./pages/ContextStateDemo"
-
-// recoil 
-// ReactDOM.render(
-//   <RecoilRoot>
-//     <RecoilDemo />
-//   </RecoilRoot>,
-//   document.getElementById('root')
-// );
-
-// // context 
-// ReactDOM.render(<ContextDemo />,document.getElementById('root2'));
+import RecoilDemo from "./pages/Recoil"
+import ContextDemo from "./pages/Context"
 
 
-// todolist
-// ReactDOM.render(
-//   <RecoilRoot>
-//     <TodoListDemo />
-//   </RecoilRoot>,
-//   document.getElementById('root3')
-// )
+// context
+ReactDOM.render(
+  <ContextDemo />,
+  document.getElementById('root2')
+)
 
-// state-context
-ReactDOM.render(<ContextStateDemo />
-  ,
+
+// recoil
+ReactDOM.render(
+  <RecoilRoot>
+    <RecoilDemo />
+  </RecoilRoot>,
   document.getElementById('root3')
 )
