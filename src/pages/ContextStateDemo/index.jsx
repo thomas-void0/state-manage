@@ -3,8 +3,9 @@ import { createContainer,usePersistFn } from "context-state"
 
 function useCounter(){
     const [count, setCount] = React.useState(0)
-    const [status, setStatus] = React.useState("init")
-    const increment = usePersistFn(() => setCount(c => c + 1));
+    const [status, setStatus2] = React.useState("init")
+    const increment = usePersistFn(() => setCount(c => c + 1))
+    const setStatus = usePersistFn((val) => setStatus2(val))
 
     return {
         status,
