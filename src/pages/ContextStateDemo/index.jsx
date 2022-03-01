@@ -10,7 +10,7 @@ function useCounter(){
     return {
         status,
         count,
-        increment,
+        increment, 
         setStatus
     }
 }
